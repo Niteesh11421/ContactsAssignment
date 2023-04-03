@@ -1,0 +1,104 @@
+<h3 style="text-align: center;">Add/Edit Contact</h3>
+<hr>
+<div class="container mt-10">
+    <form [formGroup]="formContact">
+        <div class="container row form-group">
+            <label class="col-sm-2"><b>First Name:</b> </label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="First Name"
+                    formControlName="FirstName"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('FirstName').touched && formContact.get('FirstName').errors">
+                    First Name is required
+                </span>
+            </div>
+            <label class="col-sm-2"><b>Last Name: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="Last Name"
+                    formControlName="LastName"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('LastName').touched && formContact.get('LastName').errors">
+                    Last Name is required
+                </span>
+            </div>
+        </div>
+        <div class="container row form-group">
+            <label class="col-sm-2"><b>Email:</b> </label>
+            <div class="col-sm-4">
+                <input class="full-width" type="email" placeholder="Email"
+                    formControlName="Email"><br>
+                <span class="text-danger" *ngIf="formContact.get('Email').touched && formContact.get('Email').errors">
+                    Email is required
+                </span>
+            </div>
+            <label class="col-sm-2"><b>Phone number: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="number" placeholder="Phone Number"
+                    formControlName="PhoneNumber"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('PhoneNumber').touched && formContact.get('PhoneNumber').errors">
+                    Phone Number is required
+                </span>
+            </div>
+        </div>
+        <div class="container row form-group">
+            <label class="col-sm-2"><b>Address: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="Address"
+                    formControlName="Address"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('Address').touched && formContact.get('Address').errors">
+                    Address is required
+                </span>
+            </div>
+            <label class="col-sm-2"><b>City: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="City"
+                    formControlName="City"><br>
+                <span class="text-danger" *ngIf="formContact.get('City').touched && formContact.get('City').errors">
+                    City Name is required
+                </span>
+            </div>
+        </div>
+        <div class="container row form-group">
+            <label class="col-sm-2"><b>State: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="State"
+                    formControlName="State"><br>
+                <span class="text-danger" *ngIf="formContact.get('State').touched && formContact.get('State').errors">
+                    State Name is required
+                </span>
+            </div>
+            <label class="col-sm-2"><b>Country: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="text" placeholder="Country"
+                    formControlName="Country"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('Country').touched && formContact.get('Country').errors">
+                    Country Name is required
+                </span>
+            </div>
+        </div>
+        <div class="container row form-group">
+            <label class="col-sm-2"><b>Postal code: </b></label>
+            <div class="col-sm-4">
+                <input class="full-width" type="number" placeholder="Postal Code"
+                    formControlName="PostalCode"><br>
+                <span class="text-danger"
+                    *ngIf="formContact.get('PostalCode').touched && formContact.get('PostalCode').errors">
+                    Postal Code is required
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col-5"></div>
+    <div class="col-2">
+
+        <button type="button" class="btn btn-primary" style="margin-right: 20px;" [disabled]="!formContact.valid"
+            (click)="addOrEditContact()">Submit</button>
+        <button type="button" class="btn btn-default" [routerLink]="'/contactslist'">Cancel</button>
+    </div>
+    <div class="col-5"></div>
+</div>

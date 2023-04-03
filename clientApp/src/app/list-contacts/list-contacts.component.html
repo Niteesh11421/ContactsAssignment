@@ -1,0 +1,37 @@
+<div class="row mt-10">
+    <h3 class="col-sm-9">Contacts</h3>
+    <button type="button" class="col-sm-2 btn btn-primary" style="margin-left: 50px;">
+        <a class="add-contact-button" (click)="addContacts()">Add Contact</a>
+    </button>
+</div>
+
+<table class="mt-10">
+    <thead>
+        <tr>
+            <th class="icon-Pointer" (click)="columnSort('FirstName')">First name</th>
+            <th class="icon-Pointer" (click)="columnSort('LastName')">Last name</th>
+            <th class="icon-Pointer" (click)="columnSort('Email')">Email</th>
+            <th class="icon-Pointer" (click)="columnSort('PhoneNumber')">Phone number</th>
+            <th class="icon-Pointer" (click)="columnSort('Address')">Address</th>
+            <th class="icon-Pointer" (click)="columnSort('City')">City</th>
+            <th class="icon-Pointer" (click)="columnSort('State')">State</th>
+            <th class="icon-Pointer" (click)="columnSort('Country')">Country</th>
+            <th class="icon-Pointer" (click)="columnSort('PostalCode')">Postal code</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of listContacts">
+            <td>{{list.FirstName}}</td>
+            <td>{{list.LastName}}</td>
+            <td>{{list.Email}}</td>
+            <td>{{list.PhoneNumber}}</td>
+            <td>{{list.Address}}</td>
+            <td>{{list.City}}</td>
+            <td>{{list.State}}</td>
+            <td>{{list.Country}}</td>
+            <td>{{list.PostalCode}}</td>
+            <td><a class="edit-contact" (click)="addOrEditContacts(list)">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
